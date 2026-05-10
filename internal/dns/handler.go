@@ -65,7 +65,7 @@ func (h *Handler) DeleteServer() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		body, err := readDeleteServerRequest(r)
 		if err != nil {
-			res.Json(w, ErrorResponse{Error: "invalid request body"}, http.StatusBadRequest)
+			res.Json(w, ErrorResponse{Error: "invalid request"}, http.StatusBadRequest)
 			return
 		}
 
@@ -80,23 +80,19 @@ func (h *Handler) DeleteServer() http.HandlerFunc {
 }
 
 func readDeleteServerRequest(r *http.Request) (ServerRequest, error) {
-	body, err := req.Decode[ServerRequest](r.Body)
-	if err == nil {
-		return body, nil
+	server := r.URL.Query().Get("server")
+	if server != "" {
+		return ServerRequest{
+			Server: server,
+		}, nil
 	}
 
-	if !errors.Is(err, req.ErrEmptyBody) {
+	body, err := req.Decode[ServerRequest](r.Body)
+	if err != nil {
 		return ServerRequest{}, err
 	}
 
-	server := r.URL.Query().Get("server")
-	if server == "" {
-		return ServerRequest{}, req.ErrEmptyBody
-	}
-
-	return ServerRequest{
-		Server: server,
-	}, nil
+	return body, nil
 }
 
 func writeServiceError(w http.ResponseWriter, err error) {

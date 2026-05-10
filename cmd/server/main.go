@@ -71,10 +71,10 @@ func main() {
 
 	select {
 	case <-ctx.Done():
-		log.Info("Shutting down server\n")
+		log.Info("Shutting down server")
 	case err := <-errCh:
 		if err != nil && !errors.Is(err, http.ErrServerClosed) {
-			log.Error("Server stopped unexpectedly: %v\n", err)
+			log.Error("Server stopped unexpectedly: %v", err)
 			os.Exit(1)
 		}
 	}

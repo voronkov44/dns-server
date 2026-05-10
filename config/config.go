@@ -12,7 +12,7 @@ type Config struct {
 	ReadHeaderTimeout time.Duration `env:"DNS_MANAGER_READ_HEADER_TIMEOUT" env-default:"5s"`
 	ShutdownTimeout   time.Duration `env:"DNS_MANAGER_SHUTDOWN_TIMEOUT" env-default:"10s"`
 	LogLevel          string        `env:"DNS_MANAGER_LOG_LEVEL" env-default:"info"`
-	LogFilePath       string        `env:"DNS_MANAGER_LOG_FILE_PATH" env-default:"./dns-server.log"`
+	LogFilePath       string        `env:"DNS_MANAGER_LOG_FILE_PATH" env-default:"logs/dns-server.log"`
 }
 
 func LoadConfig() *Config {

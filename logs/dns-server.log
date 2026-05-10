@@ -1,0 +1,29 @@
+time=2026-05-11T01:09:15.777+03:00 level=INFO msg="server started" port=:8080 resolv_conf_path=./resolv.conf log_level=info log_file_path=logs/dns-server.log
+time=2026-05-11T01:09:33.583+03:00 level=INFO msg="Shutting down server\n"
+time=2026-05-11T01:09:33.583+03:00 level=INFO msg="Server stopped"
+time=2026-05-11T01:51:24.913+03:00 level=INFO msg="server started" port=:8080 resolv_conf_path=./resolv.conf log_level=info log_file_path=logs/dns-server.log
+time=2026-05-11T01:53:07.199+03:00 level=WARN msg="http request failed" status=400 method=POST path=/dns bytes=33 duration=456.583µs
+time=2026-05-11T02:02:40.227+03:00 level=INFO msg="http request succeeded" status=200 method=GET path=/dns bytes=44 duration=3.457167ms
+time=2026-05-11T02:02:44.192+03:00 level=INFO msg="http request succeeded" status=200 method=GET path=/healthz bytes=16 duration=47.916µs
+time=2026-05-11T02:02:48.773+03:00 level=INFO msg="http request succeeded" status=201 method=POST path=/dns bytes=54 duration=8.117833ms
+time=2026-05-11T02:02:51.177+03:00 level=WARN msg="http request failed" status=409 method=POST path=/dns bytes=38 duration=331.791µs
+time=2026-05-11T02:02:58.278+03:00 level=WARN msg="http request failed" status=404 method=DELETE path=/dns bytes=33 duration=225.417µs
+time=2026-05-11T02:03:10.991+03:00 level=INFO msg="http request succeeded" status=200 method=DELETE path=/dns bytes=44 duration=9.703542ms
+time=2026-05-11T02:03:22.026+03:00 level=INFO msg="http request succeeded" status=200 method=GET path=/dns bytes=44 duration=129.292µs
+time=2026-05-11T02:03:41.236+03:00 level=INFO msg="http request succeeded" status=200 method=DELETE path=/dns bytes=34 duration=17.097917ms query="server=8.8.8.6"
+time=2026-05-11T02:04:05.123+03:00 level=INFO msg="http request succeeded" status=200 method=GET path=/dns bytes=34 duration=151.25µs
+time=2026-05-11T02:04:15.526+03:00 level=INFO msg="http request succeeded" status=201 method=POST path=/dns bytes=44 duration=14.304167ms
+time=2026-05-11T02:04:24.462+03:00 level=INFO msg="http request succeeded" status=200 method=DELETE path=/dns bytes=34 duration=11.702709ms query="server=8.8.8.9"
+time=2026-05-11T02:04:31.729+03:00 level=INFO msg="http request succeeded" status=200 method=GET path=/dns bytes=34 duration=163.959µs
+time=2026-05-11T02:07:56.698+03:00 level=INFO msg="Shutting down server"
+time=2026-05-11T02:07:56.700+03:00 level=INFO msg="Server stopped"
+time=2026-05-11T02:08:00.398+03:00 level=INFO msg="server started" port=:8080 resolv_conf_path=./resolv.conf log_level=info log_file_path=logs/dns-server.log
+time=2026-05-11T02:08:44.548+03:00 level=INFO msg="http request succeeded" status=200 method=GET path=/dns bytes=34 duration=795.417µs
+time=2026-05-11T02:08:50.595+03:00 level=INFO msg="http request succeeded" status=200 method=DELETE path=/dns bytes=24 duration=13.614167ms query="server=8.8.8.9"
+time=2026-05-11T02:09:02.661+03:00 level=INFO msg="http request succeeded" status=201 method=POST path=/dns bytes=34 duration=8.146958ms
+time=2026-05-11T02:09:12.312+03:00 level=INFO msg="http request succeeded" status=200 method=DELETE path=/dns bytes=24 duration=8.726084ms query="server=8.8.8.8"
+time=2026-05-11T02:09:54.274+03:00 level=WARN msg="http request failed" status=404 method=DELETE path=/dns bytes=33 duration=173.583µs query="server=8.8.8.8"
+time=2026-05-11T02:10:03.215+03:00 level=INFO msg="http request succeeded" status=200 method=DELETE path=/dns bytes=15 duration=14.7895ms query="server=8.8.8.7"
+time=2026-05-11T02:10:15.027+03:00 level=INFO msg="http request succeeded" status=201 method=POST path=/dns bytes=24 duration=13.838042ms
+time=2026-05-11T02:10:29.511+03:00 level=INFO msg="Shutting down server"
+time=2026-05-11T02:10:29.511+03:00 level=INFO msg="Server stopped"
