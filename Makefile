@@ -34,9 +34,14 @@ help:
 	@echo "  make build-server     Build server binary"
 	@echo "  make build-cli        Build CLI binary"
 	@echo "  make install-cli      Install dnsctl into GOPATH/bin"
-	@echo "  make test             Run tests"
+	@echo "  make test             Run all tests"
+	@echo "  make test-unit        Run unit tests only"
+	@echo "  make test-smoke       Run smoke tests only"
+	@echo "  make test-verbose     Run all tests with verbose output"
+	@echo "  make test-unit-verbose"
+	@echo "  make test-smoke-verbose"
 	@echo "  make lint             Run golangci-lint"
-	@echo "  make check            Run fmt, tidy, lint and tests"
+	@echo "  make check            Run fmt, tidy, lint and all tests"
 	@echo "  make fmt              Format Go code"
 	@echo "  make tidy             Run go mod tidy"
 	@echo "  make clean            Remove build artifacts"
@@ -87,6 +92,26 @@ install-cli:
 .PHONY: test
 test:
 	go test ./...
+
+.PHONY: test-unit
+test-unit:
+	go test ./internal/... ./pkg/...
+
+.PHONY: test-smoke
+test-smoke:
+	go test ./tests/smoke
+
+.PHONY: test-verbose
+test-verbose:
+	go test -v ./...
+
+.PHONY: test-unit-verbose
+test-unit-verbose:
+	go test -v ./internal/... ./pkg/...
+
+.PHONY: test-smoke-verbose
+test-smoke-verbose:
+	go test -v ./tests/smoke
 
 .PHONY: lint
 lint:
