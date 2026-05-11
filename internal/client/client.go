@@ -95,7 +95,9 @@ func (c *Client) doServersRequest(req *http.Request) ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer resp.Body.Close()
+	defer func() {
+		_ = resp.Body.Close()
+	}()
 
 	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
 		var errorResponse ErrorResponse

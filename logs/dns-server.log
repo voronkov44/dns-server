@@ -52,3 +52,20 @@ time=2026-05-11T14:45:12.743+03:00 level=INFO msg="http request succeeded" statu
 time=2026-05-11T14:45:17.536+03:00 level=INFO msg="http request succeeded" status=201 method=POST path=/dns bytes=34 duration=6.419375ms
 time=2026-05-11T14:45:25.753+03:00 level=WARN msg="http request failed" status=400 method=DELETE path=/dns bytes=39 duration=20.541µs query="server=8.8.8.9.0"
 time=2026-05-11T14:45:32.835+03:00 level=WARN msg="http request failed" status=404 method=DELETE path=/dns bytes=33 duration=224.875µs query="server=8.8.8.7"
+time=2026-05-11T15:00:22.398+03:00 level=INFO msg="server started" port=:8080 resolv_conf_path=./resolv.conf log_level=info log_file_path=logs/dns-server.log
+time=2026-05-11T15:00:22.399+03:00 level=ERROR msg="Server stopped unexpectedly: %v" !BADKEY="listen tcp :8080: bind: address already in use"
+time=2026-05-11T15:01:14.699+03:00 level=INFO msg="Shutting down server"
+time=2026-05-11T15:01:14.701+03:00 level=INFO msg="Server stopped"
+time=2026-05-11T15:01:19.284+03:00 level=INFO msg="server started" port=:8080 resolv_conf_path=./resolv.conf log_level=info log_file_path=logs/dns-server.log
+time=2026-05-11T15:01:32.308+03:00 level=INFO msg="Shutting down server"
+time=2026-05-11T15:01:32.308+03:00 level=INFO msg="Server stopped"
+time=2026-05-11T15:01:42.819+03:00 level=INFO msg="server started" port=:8080 resolv_conf_path=./resolv.conf log_level=info log_file_path=logs/dns-server.log
+time=2026-05-11T15:01:49.818+03:00 level=INFO msg="http request succeeded" status=200 method=GET path=/dns bytes=34 duration=949.583µs
+time=2026-05-11T15:01:55.993+03:00 level=WARN msg="http request failed" status=409 method=POST path=/dns bytes=38 duration=1.462375ms
+time=2026-05-11T15:02:04.939+03:00 level=INFO msg="http request succeeded" status=201 method=POST path=/dns bytes=45 duration=11.636125ms
+time=2026-05-11T15:02:15.792+03:00 level=INFO msg="http request succeeded" status=200 method=DELETE path=/dns bytes=34 duration=10.505125ms query="server=8.8.8.10"
+time=2026-05-11T15:02:41.677+03:00 level=INFO msg="http request succeeded" status=200 method=GET path=/dns bytes=34 duration=137.875µs
+time=2026-05-11T15:02:48.013+03:00 level=WARN msg="http request failed" status=409 method=POST path=/dns bytes=38 duration=203.959µs
+time=2026-05-11T15:02:52.119+03:00 level=INFO msg="http request succeeded" status=201 method=POST path=/dns bytes=44 duration=9.446291ms
+time=2026-05-11T15:20:54.136+03:00 level=INFO msg="Shutting down server"
+time=2026-05-11T15:20:54.137+03:00 level=INFO msg="Server stopped"

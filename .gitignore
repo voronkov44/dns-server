@@ -24,5 +24,11 @@ go.work
 # Mac users
 .DS_Store
 
+# gocache
+.gocache
+
 # .env
 .env
+
+# build bin
+bin/

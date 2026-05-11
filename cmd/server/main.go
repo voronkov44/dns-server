@@ -74,7 +74,7 @@ func main() {
 		log.Info("Shutting down server")
 	case err := <-errCh:
 		if err != nil && !errors.Is(err, http.ErrServerClosed) {
-			log.Error("Server stopped unexpectedly: %v", err)
+			log.Error("server stopped unexpectedly", "error", err)
 			os.Exit(1)
 		}
 	}

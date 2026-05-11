@@ -216,7 +216,9 @@ func (r *FileRepository) writeFileAtomic(content []byte) error {
 
 	shouldRemoveTmp = false
 
-	syncDir(dir)
+	if err := syncDir(dir); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -234,15 +236,20 @@ func (r *FileRepository) resolvedPath() (string, error) {
 	return resolved, nil
 }
 
-func syncDir(dir string) {
+func syncDir(dir string) error {
 	dirFile, err := os.Open(dir)
 	if err != nil {
-		return
+		return err
 	}
 
-	defer dirFile.Close()
+	syncErr := dirFile.Sync()
+	closeErr := dirFile.Close()
 
-	_ = dirFile.Sync()
+	if syncErr != nil {
+		return syncErr
+	}
+
+	return closeErr
 }
 
 func parseServersFromContent(content string) []Server {
