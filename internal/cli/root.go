@@ -1,19 +1,20 @@
 package cli
 
 import (
+	"dns-manager/config"
 	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
 )
 
-const defaultServerURL = "http://localhost:8080"
-
 type App struct {
 	serverURL string
 }
 
 func NewRootCommand() *cobra.Command {
+	cfg := config.LoadConfig()
+
 	app := &App{}
 
 	rootCmd := &cobra.Command{
@@ -30,7 +31,7 @@ The CLI does not edit resolv.conf directly; it only sends requests to the server
 	rootCmd.PersistentFlags().StringVar(
 		&app.serverURL,
 		"server",
-		getEnv("DNS_MANAGER_SERVER_URL", defaultServerURL),
+		cfg.ServerURL,
 		"DNS manager server URL",
 	)
 
@@ -46,13 +47,4 @@ func Execute() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-}
-
-func getEnv(key, fallback string) string {
-	value := os.Getenv(key)
-	if value == "" {
-		return fallback
-	}
-
-	return value
 }

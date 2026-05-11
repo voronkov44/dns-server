@@ -13,6 +13,7 @@ type Config struct {
 	ShutdownTimeout   time.Duration `env:"DNS_MANAGER_SHUTDOWN_TIMEOUT" env-default:"10s"`
 	LogLevel          string        `env:"DNS_MANAGER_LOG_LEVEL" env-default:"info"`
 	LogFilePath       string        `env:"DNS_MANAGER_LOG_FILE_PATH" env-default:"logs/dns-server.log"`
+	ServerURL         string        `env:"DNS_MANAGER_SERVER_URL" env-default:"http://localhost:8080"`
 }
 
 func LoadConfig() *Config {
@@ -20,7 +21,7 @@ func LoadConfig() *Config {
 
 	if err := cleanenv.ReadConfig(".env", &cfg); err != nil {
 		if err := cleanenv.ReadEnv(&cfg); err != nil {
-			log.Fatalf("Cannot read config: %s", err)
+			log.Fatalf("cannot read config: %s", err)
 		}
 	}
 
